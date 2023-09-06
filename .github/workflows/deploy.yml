@@ -15,7 +15,7 @@ jobs:
 
       - name: deploy to vm
         run: |
-          ssh sohaib.asif1@systemsltd.com@20.189.118.14
+          ssh azureuser@20.189.118.14
           echo "Hello world ${{ secrets.secret_value }}" >> /var/www/html/index.html
           sudo systemctl restart apache2
           
