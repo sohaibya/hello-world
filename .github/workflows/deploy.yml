@@ -1,0 +1,27 @@
+name: deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: deploy to vm
+        run: |
+          ssh sohaib.asif1@systemsltd.com@20.189.118.14
+          echo "Hello world ${{ secrets.secret_value }}" >> /var/www/html/index.html
+          sudo systemctl restart apache2
+          
+      
+      
+          
+
+      
+       
